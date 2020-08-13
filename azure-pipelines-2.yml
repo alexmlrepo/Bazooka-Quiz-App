@@ -1,4 +1,13 @@
 # Node.js
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go (00da78ac-9d0e-427b-80da-e1b07c749f72)'
+    appType: 'webAppLinux'
+    WebAppName: 'testservice'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'NODE|12-lts'
+    StartupCommand: 'npm build'
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
